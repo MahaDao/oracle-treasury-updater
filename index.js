@@ -17,13 +17,20 @@ const TreasuryABI = require('./abi/Treasury.json');
 const BondRedemtionOracleABI = require('./abi/BondRedemtionOracle.json');
 const SeigniorageOracleABI = require('./abi/SeigniorageOracle.json');
 
-
 const init = async () => {
     const provider = new Provider(privateKey, infuraUrl);
     const web3 = new Web3(provider);
     const networkId = await web3.eth.net.getId();
 
     console.log('i am in newtwork id', networkId)
+
+    const getSendParams = async (nonceBump = 0) => {
+        return {
+            from,
+            nonce: await web3.eth.getTransactionCount(from),
+            gasPrice: await web3.eth.getGasPrice() + nonceBump
+        }
+    }
 
     const Treasury = new web3.eth.Contract(
         TreasuryABI.abi,
@@ -40,17 +47,31 @@ const init = async () => {
         addresses.SeigniorageOracle.address
     );
 
+
     cron.schedule('*/10 * * * *', async () => {
-        const receipt = await Treasury.methods.allocateSeigniorage().send({ from })
-        console.log('treasury tx updated', receipt.transactionHash)
+        try {
+            const receipt = await Treasury.methods.allocateSeigniorage().send(await getSendParams())
+            console.log('treasury tx updated', receipt.transactionHash)
+        } catch (e) {
+            console.log('treasury tx filed; nvm', e)
+        }
     });
 
-    cron.schedule('*/5 * * * *', async () => {
-        const receipt1 = await BondRedemtionOracle.methods.update().send({ from })
-        console.log('BondRedemtionOracle updated; tx hash', receipt1.transactionHash)
 
-        const receipt2 = await SeigniorageOracle.methods.update().send({ from })
-        console.log('SeigniorageOracle updated; tx hash', receipt2.transactionHash)
+    cron.schedule('*/5 * * * *', async () => {
+        try {
+            const receipt1 = await BondRedemtionOracle.methods.update().send(await getSendParams())
+            console.log('BondRedemtionOracle updated; tx hash', receipt1.transactionHash)
+        } catch (e) {
+            console.log('BondRedemtionOracle tx filed; nvm', e)
+        }
+
+        try {
+            const receipt2 = await SeigniorageOracle.methods.update().send(await getSendParams(1))
+            console.log('SeigniorageOracle updated; tx hash', receipt2.transactionHash)
+        } catch (e) {
+            console.log('SeigniorageOracle tx filed; nvm', e)
+        }
     });
 }
 
