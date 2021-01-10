@@ -19,6 +19,7 @@ const TreasuryABI = require('./abi/Treasury.json');
 const BondRedemtionOracleABI = require('./abi/BondRedemtionOracle.json');
 const SeigniorageOracleABI = require('./abi/SeigniorageOracle.json');
 const MahaUSDOracleABI = require('./abi/MahaUSDOracle.json');
+const GMUOracleABI = require('./abi/GMUOracle.json');
 
 
 const init = async () => {
@@ -47,6 +48,11 @@ const init = async () => {
         addresses.MAHAUSDOracle.address
     );
 
+    const GMUOracle = new web3.eth.Contract(
+        GMUOracleABI.abi,
+        addresses.GMUOracle.address
+    );
+
     const BondRedemtionOracle = new web3.eth.Contract(
         BondRedemtionOracleABI.abi,
         addresses.BondRedemtionOracle.address
@@ -59,9 +65,16 @@ const init = async () => {
 
 
     const decimals = BigNumber.from(10).pow(18)
-    const price = BigNumber.from(99).mul(decimals).div(100)
-    console.log('setting price to', price)
-    await MahaUSDOracle.methods.setPrice(price.toString()).send(await getSendParams())
+    // const price = BigNumber.from(199).mul(decimals).div(100)
+    // console.log('setting price to', price)
+    // const mahatx = await MahaUSDOracle.methods.setPrice(price.toString()).send(await getSendParams())
+    // console.log(mahatx)
+
+    const gmu = BigNumber.from(199).mul(decimals).div(100)
+    console.log('setting gmu price to', gmu)
+    const gmuTx = await GMUOracle.methods.setPrice(gmu.toString()).send(await getSendParams())
+    console.log(gmuTx)
+
 
     cron.schedule('*/10 * * * *', async () => {
         try {
