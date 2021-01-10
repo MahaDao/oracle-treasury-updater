@@ -76,7 +76,7 @@ const init = async () => {
     console.log(gmuTx)
 
 
-    cron.schedule('*/10 * * * *', async () => {
+    cron.schedule('* * * * *', async () => {
         try {
             const receipt = await Treasury.methods.allocateSeigniorage().send(await getSendParams())
             console.log('treasury tx updated', receipt.transactionHash)
