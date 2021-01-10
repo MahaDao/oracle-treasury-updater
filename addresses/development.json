@@ -1,6 +1,6 @@
 {
   "ARTH": {
-    "address": "0xf08a8712A9fbe1F3767EE6eB9a03E64C0c3C9cF3",
+    "address": "0xfC82269CB943F3423ac78031e559d2c6Ced385c7",
     "abi": [
       {
         "inputs": [],
@@ -454,7 +454,7 @@
     ]
   },
   "ARTHB": {
-    "address": "0x1F24c16779459878E7Ea56cB309C81fD8CebD141",
+    "address": "0xd86C96C9AaD08D8D2F5045B1A80552c8A56ee470",
     "abi": [
       {
         "inputs": [],
@@ -908,7 +908,7 @@
     ]
   },
   "MahaToken": {
-    "address": "0x1fcD6284C5B870523B5FA6b781dF7Eea0961485b",
+    "address": "0xA1e39A578d8D9B4c01d6C018E18Eae7EFFc72f6A",
     "abi": [
       {
         "inputs": [],
@@ -1656,7 +1656,7 @@
     ]
   },
   "ArthLiquidityBoardroom": {
-    "address": "0x206eb0E8DFF38d7Cca2b3DA9C472f8E0bbb376Fe",
+    "address": "0x4ca8Af3924ca80CAd6D7F48758B80E0727DF340F",
     "abi": [
       {
         "inputs": [
@@ -2143,7 +2143,7 @@
     ]
   },
   "ArthBoardroom": {
-    "address": "0x551615b1BFd80A0d4D0Af015B228914ee43125e0",
+    "address": "0xb8F82329454A8E9f6de0488EFa4Ca8A32a2dE719",
     "abi": [
       {
         "inputs": [
@@ -2625,7 +2625,7 @@
     ]
   },
   "GMUOracle": {
-    "address": "0x79bCCa19Cb75ed4b27c65d5867bEe4bDCCD28DEf",
+    "address": "0xAcF8DB6978bbe67296ccD1369128dfAc64869CE6",
     "abi": [
       {
         "inputs": [
@@ -2793,7 +2793,7 @@
     ]
   },
   "SeigniorageOracle": {
-    "address": "0x0CbFf89E9788A3F136b0A11aeAE79554DcC71Aae",
+    "address": "0x9e81B655e4c53D996895C60cb4D62F427a1f1438",
     "abi": [
       {
         "inputs": [
@@ -3204,7 +3204,7 @@
     ]
   },
   "MAHAUSDOracle": {
-    "address": "0xd425feAD8793c17fD7fd235f833d764B214d8E38",
+    "address": "0x8768E08596c8030824f64AeD68558Ad1b8d822b2",
     "abi": [
       {
         "inputs": [
@@ -3372,7 +3372,7 @@
     ]
   },
   "BondRedemtionOracle": {
-    "address": "0xeA435d4f26a41653Cdd8Fc87B1284F6dB80Ab235",
+    "address": "0x1A49c9F1D388756885E71C7E04E3B18687fd72c6",
     "abi": [
       {
         "inputs": [
@@ -3783,7 +3783,7 @@
     ]
   },
   "BurnbackFund": {
-    "address": "0xB3dA9998be87f505A1Ef239a18A80f480b8579eb",
+    "address": "0x5c698699D3d54874EfA516A54e05AaD54E8f9B2E",
     "abi": [
       {
         "anonymous": false,
@@ -3948,7 +3948,7 @@
     ]
   },
   "DevelopmentFund": {
-    "address": "0x6f87D84dd88327cc786FeE36b8Ce5D35B3B1f48F",
+    "address": "0x2c41A27e36595165d0369778a9F3FCAfFeaB9b91",
     "abi": [
       {
         "anonymous": false,
@@ -4113,7 +4113,7 @@
     ]
   },
   "Treasury": {
-    "address": "0xA3A1FAc2fA464A0a40b93dE03D2d3141C66Fa343",
+    "address": "0x77796fD5598461cCB942f99431BceB3EEe174029",
     "abi": [
       {
         "inputs": [
