@@ -11,6 +11,7 @@ const network = nconf.get('NETWORK');
 const from = nconf.get('FROM_ADDRESS')
 const privateKey = nconf.get('PRIVATE_KEY');;
 const infuraUrl = `https://${network}.infura.io/v3/${nconf.get('INFURA_KEY')}`
+const ganacheUrl = 'http://127.0.0.1:7545'
 
 const addresses = require(`./addresses/${network}.json`)
 const TreasuryABI = require('./abi/Treasury.json');
@@ -18,7 +19,7 @@ const BondRedemtionOracleABI = require('./abi/BondRedemtionOracle.json');
 const SeigniorageOracleABI = require('./abi/SeigniorageOracle.json');
 
 const init = async () => {
-    const provider = new Provider(privateKey, infuraUrl);
+    const provider = new Provider(privateKey, network === 'development' ? ganacheUrl : infuraUrl);
     const web3 = new Web3(provider);
     const networkId = await web3.eth.net.getId();
 
