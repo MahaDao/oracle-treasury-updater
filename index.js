@@ -2,6 +2,7 @@ const nconf = require('nconf')
 const cron = require('node-cron')
 const Web3 = require('web3');
 const Provider = require('@truffle/hdwallet-provider');
+const { BigNumber } = require('ethers')
 
 nconf.argv().env()
 nconf.file('config.json');
@@ -57,8 +58,10 @@ const init = async () => {
     );
 
 
-
-    await MahaUSDOracle.methods.setPrice(1).send(await getSendParams())
+    const decimals = BigNumber.from(10).pow(18)
+    const price = BigNumber.from(99).mul(decimals).div(100)
+    console.log('setting price to', price)
+    await MahaUSDOracle.methods.setPrice(price.toString()).send(await getSendParams())
 
     cron.schedule('*/10 * * * *', async () => {
         try {
