@@ -17,6 +17,8 @@ const addresses = require(`./addresses/${network}.json`)
 const TreasuryABI = require('./abi/Treasury.json');
 const BondRedemtionOracleABI = require('./abi/BondRedemtionOracle.json');
 const SeigniorageOracleABI = require('./abi/SeigniorageOracle.json');
+const MahaUSDOracleABI = require('./abi/MahaUSDOracle.json');
+
 
 const init = async () => {
     const provider = new Provider(privateKey, network === 'development' ? ganacheUrl : infuraUrl);
@@ -28,14 +30,20 @@ const init = async () => {
     const getSendParams = async (nonceBump = 0) => {
         return {
             from,
-            nonce: await web3.eth.getTransactionCount(from),
-            gasPrice: await web3.eth.getGasPrice() + nonceBump
+            nonce: await web3.eth.getTransactionCount(from) + nonceBump,
+            gasPrice: await web3.eth.getGasPrice()
         }
     }
 
     const Treasury = new web3.eth.Contract(
         TreasuryABI.abi,
         addresses.Treasury.address
+    );
+
+
+    const MahaUSDOracle = new web3.eth.Contract(
+        MahaUSDOracleABI.abi,
+        addresses.MAHAUSDOracle.address
     );
 
     const BondRedemtionOracle = new web3.eth.Contract(
@@ -48,6 +56,9 @@ const init = async () => {
         addresses.SeigniorageOracle.address
     );
 
+
+
+    await MahaUSDOracle.methods.setPrice(1).send(await getSendParams())
 
     cron.schedule('*/10 * * * *', async () => {
         try {
