@@ -22,7 +22,7 @@ const GMUOracleABI = require('./abi/GMUOracle.json');
 
 
 const init = async () => {
-    const provider = new Provider(privateKey, process.env.WEB3_HTTP_URL);
+    const provider = new Provider(privateKey, nconf.get('WEB3_HTTP_URL'));
     const web3 = new Web3(provider);
     const networkId = await web3.eth.net.getId();
 
