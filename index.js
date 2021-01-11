@@ -70,13 +70,13 @@ const init = async () => {
     // const mahatx = await MahaUSDOracle.methods.setPrice(price.toString()).send(await getSendParams())
     // console.log(mahatx)
 
-    const gmu = BigNumber.from(199).mul(decimals).div(100)
-    console.log('setting gmu price to', gmu)
-    const gmuTx = await GMUOracle.methods.setPrice(gmu.toString()).send(await getSendParams())
-    console.log(gmuTx)
+    // const gmu = BigNumber.from(199).mul(decimals).div(100)
+    // console.log('setting gmu price to', gmu)
+    // const gmuTx = await GMUOracle.methods.setPrice(gmu.toString()).send(await getSendParams())
+    // console.log(gmuTx)
 
 
-    cron.schedule('* * * * *', async () => {
+    cron.schedule('*/7 * * * *', async () => {
         try {
             const receipt = await Treasury.methods.allocateSeigniorage().send(await getSendParams())
             console.log('treasury tx updated', receipt.transactionHash)
@@ -94,8 +94,11 @@ const init = async () => {
             console.log('BondRedemtionOracle tx filed; nvm', e)
         }
 
+    });
+
+    cron.schedule('*/6 * * * *', async () => {
         try {
-            const receipt2 = await SeigniorageOracle.methods.update().send(await getSendParams(1))
+            const receipt2 = await SeigniorageOracle.methods.update().send(await getSendParams())
             console.log('SeigniorageOracle updated; tx hash', receipt2.transactionHash)
         } catch (e) {
             console.log('SeigniorageOracle tx filed; nvm', e)
