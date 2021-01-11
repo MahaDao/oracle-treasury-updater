@@ -12,6 +12,7 @@ const network = nconf.get('NETWORK');
 const from = nconf.get('FROM_ADDRESS')
 const privateKey = nconf.get('PRIVATE_KEY');;
 const infuraUrl = `https://${network}.infura.io/v3/${nconf.get('INFURA_KEY')}`
+const WEB3_HTTP_URL = 'https://weathered-young-wave.quiknode.io/75809a67-435c-4d8b-a287-649990316295/IHZHq4dJhpdQq85_QIA5Uidl_btMGwikH8tF3VNPZsgoFhaetWDXXdmkavW1TaTf5JrVwFWnMsx8aJ-fR01pTg==/'
 const ganacheUrl = 'http://127.0.0.1:7545'
 
 const addresses = require(`./addresses/${network}.json`)
@@ -23,7 +24,7 @@ const GMUOracleABI = require('./abi/GMUOracle.json');
 
 
 const init = async () => {
-    const provider = new Provider(privateKey, network === 'development' ? ganacheUrl : infuraUrl);
+    const provider = new Provider(privateKey, quiknode);
     const web3 = new Web3(provider);
     const networkId = await web3.eth.net.getId();
 
@@ -70,10 +71,10 @@ const init = async () => {
     // const mahatx = await MahaUSDOracle.methods.setPrice(price.toString()).send(await getSendParams())
     // console.log(mahatx)
 
-    // const gmu = BigNumber.from(199).mul(decimals).div(100)
-    // console.log('setting gmu price to', gmu)
-    // const gmuTx = await GMUOracle.methods.setPrice(gmu.toString()).send(await getSendParams())
-    // console.log(gmuTx)
+    const gmu = BigNumber.from(299).mul(decimals).div(100)
+    console.log('setting gmu price to', gmu)
+    const gmuTx = await GMUOracle.methods.setPrice(gmu.toString()).send(await getSendParams())
+    console.log(gmuTx)
 
 
     cron.schedule('*/7 * * * *', async () => {
