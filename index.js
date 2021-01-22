@@ -31,7 +31,7 @@ const init = async () => {
     const getSendParams = async (nonceBump = 0) => {
         return {
             from,
-            nonce:  await web3.eth.getTransactionCount(from) + nonceBump,
+            nonce: await web3.eth.getTransactionCount(from) + nonceBump,
             gasPrice: await web3.eth.getGasPrice()
         }
     }
@@ -69,44 +69,62 @@ const init = async () => {
     // const mahatx = await ArthMahaOracle.methods.setPrice(price.toString()).send(await getSendParams())
     // console.log(mahatx)
 
+
     // try {
-    //     const gmu = BigNumber.from(299).mul(decimals).div(100)
-    //     console.log('setting gmu price to', gmu)
-    //     const gmuTx = await GMUOracle.methods.setPrice(gmu.toString()).send(await getSendParams())
-    //     console.log(gmuTx)
+    //     // const init = await Treasury.methods.initialize()
+    //     // console.log(init.transactionHash)
+
+        // const gmu = BigNumber.from(90).mul(decimals).div(100)
+        // console.log('setting gmu price to', gmu)
+        // const gmuTx = await GMUOracle.methods.setPrice(gmu.toString()).send(await getSendParams())
+        // console.log(gmuTx.transactionHash)
 
     // } catch (error) {
     //     console.log(error)
     // }
 
+    const receipt2 = await Treasury.methods.initialize().send(await getSendParams())
+    console.log('treasury tx init', receipt2.transactionHash)
 
-    cron.schedule('*/10 * * * *', async () => {
+
+    // const receipt11 = await Treasury.methods.setArthLiquidityBoardroom('0xA0d61C2c2cBD80Af404adB0432533DC3BE6ED25C', 1).send(await getSendParams())
+    // console.log('treasury tx init', receipt11.transactionHash)
+
+    // const receipt12 = await Treasury.methods.setMahaLiquidityBoardroom('0xA0d61C2c2cBD80Af404adB0432533DC3BE6ED25C', 1).send(await getSendParams())
+    // console.log('treasury tx init', receipt12.transactionHash)
+
+    // const receipt3 = await Treasury.methods.allocateSeigniorage().send(await getSendParams())
+    // console.log('treasury tx updated', receipt3.transactionHash)
+
+    // cron.schedule('*/10 * * * *', async () => {
+    //     try {
+    //         const receipt = await Treasury.methods.allocateSeigniorage().send(await getSendParams())
+    //         console.log('treasury tx updated', receipt.transactionHash)
+    //     } catch (e) {
+    //         console.log('treasury tx filed; nvm', e)
+    //     }
+    // });
+
+
+    // cron.schedule('*/1 * * * *', async () => {
         try {
-            const receipt = await Treasury.methods.allocateSeigniorage().send(await getSendParams())
-            console.log('treasury tx updated', receipt.transactionHash)
-        } catch (e) {
-            console.log('treasury tx filed; nvm', e)
-        }
-    });
-
-
-    cron.schedule('*/4 * * * *', async () => {
-        try {
+            console.log('updating bond oracle', addresses.BondRedemtionOracle.address)
             const receipt1 = await BondRedemtionOracle.methods.update().send(await getSendParams())
             console.log('BondRedemtionOracle updated; tx hash', receipt1.transactionHash)
         } catch (e) {
             console.log('BondRedemtionOracle tx filed; nvm', e)
         }
-    });
+    // });
 
-    cron.schedule('*/6 * * * *', async () => {
-        try {
-            const receipt2 = await SeigniorageOracle.methods.update().send(await getSendParams())
-            console.log('SeigniorageOracle updated; tx hash', receipt2.transactionHash)
-        } catch (e) {
-            console.log('SeigniorageOracle tx filed; nvm', e)
-        }
-    });
+    // cron.schedule('*/6 * * * *', async () => {
+        // try {
+        //     console.log('updating ')
+        //     const receipt2 = await SeigniorageOracle.methods.update().send(await getSendParams())
+        //     console.log('SeigniorageOracle updated; tx hash', receipt2.transactionHash)
+        // } catch (e) {
+        //     console.log('SeigniorageOracle tx filed; nvm', e)
+        // }
+    // });
 }
 
 init();

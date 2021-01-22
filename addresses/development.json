@@ -1,6 +1,6 @@
 {
   "ARTH": {
-    "address": "0x84514304Fd5966F8d84E67fc5ac9D3ae5AED2649",
+    "address": "0xba599F981A2f2BC654e6fC52f15178BE6be67811",
     "abi": [
       {
         "inputs": [],
@@ -454,7 +454,7 @@
     ]
   },
   "ARTHB": {
-    "address": "0x794BcaA40810AECb631Deb344c6a748b4E806126",
+    "address": "0xb20cd6A184d4751635e86e3CaD410B49addfB99d",
     "abi": [
       {
         "inputs": [],
@@ -908,7 +908,7 @@
     ]
   },
   "MahaToken": {
-    "address": "0xdBC497c15882F8743bd8DCe8c675Aa5054477C44",
+    "address": "0x712e5A825026dAaE923EB039dacb75C9366A1680",
     "abi": [
       {
         "inputs": [],
@@ -1656,16 +1656,10 @@
     ]
   },
   "GMUOracle": {
-    "address": "0x762Ba08B9Ae61eFB4D04E9d26f82226faFb9fA88",
+    "address": "0x9C5EF2Bb0a8faa650d40232597dc2804D7a6d533",
     "abi": [
       {
-        "inputs": [
-          {
-            "internalType": "uint256",
-            "name": "_price",
-            "type": "uint256"
-          }
-        ],
+        "inputs": [],
         "stateMutability": "nonpayable",
         "type": "constructor"
       },
@@ -1799,7 +1793,7 @@
     ]
   },
   "SeigniorageOracle": {
-    "address": "0xD3F71B0c49BEc005b74bE97C2406343d5Ec27EE9",
+    "address": "0xDF9e3741fE4595014Da3ffb0eF8f2b3b2Aef32ad",
     "abi": [
       {
         "inputs": [
@@ -2276,8 +2270,8 @@
       }
     ]
   },
-  "ArthMahaOracle": {
-    "address": "0x41d18D24Bef3fe210608AC0ED030D5951a3483a6",
+  "ArthMahaTestnetOracle": {
+    "address": "0x74095995de4D70F4598F821756738368EBFB304B",
     "abi": [
       {
         "inputs": [
@@ -2321,25 +2315,6 @@
           {
             "indexed": true,
             "internalType": "address",
-            "name": "previousOperator",
-            "type": "address"
-          },
-          {
-            "indexed": true,
-            "internalType": "address",
-            "name": "newOperator",
-            "type": "address"
-          }
-        ],
-        "name": "OperatorTransferred",
-        "type": "event"
-      },
-      {
-        "anonymous": false,
-        "inputs": [
-          {
-            "indexed": true,
-            "internalType": "address",
             "name": "previousOwner",
             "type": "address"
           },
@@ -2359,7 +2334,13 @@
           {
             "indexed": false,
             "internalType": "uint256",
-            "name": "price",
+            "name": "price0CumulativeLast",
+            "type": "uint256"
+          },
+          {
+            "indexed": false,
+            "internalType": "uint256",
+            "name": "price1CumulativeLast",
             "type": "uint256"
           }
         ],
@@ -2368,94 +2349,10 @@
       },
       {
         "inputs": [],
-        "name": "callable",
-        "outputs": [
-          {
-            "internalType": "bool",
-            "name": "",
-            "type": "bool"
-          }
-        ],
-        "stateMutability": "view",
-        "type": "function",
-        "constant": true
-      },
-      {
-        "inputs": [],
-        "name": "getCurrentEpoch",
-        "outputs": [
-          {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
-          }
-        ],
-        "stateMutability": "view",
-        "type": "function",
-        "constant": true
-      },
-      {
-        "inputs": [],
-        "name": "getLastEpoch",
-        "outputs": [
-          {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
-          }
-        ],
-        "stateMutability": "view",
-        "type": "function",
-        "constant": true
-      },
-      {
-        "inputs": [],
-        "name": "getNextEpoch",
-        "outputs": [
-          {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
-          }
-        ],
-        "stateMutability": "view",
-        "type": "function",
-        "constant": true
-      },
-      {
-        "inputs": [],
-        "name": "getPeriod",
-        "outputs": [
-          {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
-          }
-        ],
-        "stateMutability": "view",
-        "type": "function",
-        "constant": true
-      },
-      {
-        "inputs": [],
         "name": "getPrice",
         "outputs": [
           {
             "internalType": "uint256",
-            "name": "amountOut",
-            "type": "uint256"
-          }
-        ],
-        "stateMutability": "view",
-        "type": "function",
-        "constant": true
-      },
-      {
-        "inputs": [],
-        "name": "getStartTime",
-        "outputs": [
-          {
-            "internalType": "uint256",
             "name": "",
             "type": "uint256"
           }
@@ -2466,40 +2363,12 @@
       },
       {
         "inputs": [],
-        "name": "isOperator",
+        "name": "name",
         "outputs": [
           {
-            "internalType": "bool",
+            "internalType": "string",
             "name": "",
-            "type": "bool"
-          }
-        ],
-        "stateMutability": "view",
-        "type": "function",
-        "constant": true
-      },
-      {
-        "inputs": [],
-        "name": "nextEpochPoint",
-        "outputs": [
-          {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
-          }
-        ],
-        "stateMutability": "view",
-        "type": "function",
-        "constant": true
-      },
-      {
-        "inputs": [],
-        "name": "operator",
-        "outputs": [
-          {
-            "internalType": "address",
-            "name": "",
-            "type": "address"
+            "type": "string"
           }
         ],
         "stateMutability": "view",
@@ -2521,32 +2390,16 @@
         "constant": true
       },
       {
-        "inputs": [
-          {
-            "internalType": "address",
-            "name": "factory",
-            "type": "address"
-          },
-          {
-            "internalType": "address",
-            "name": "tokenA",
-            "type": "address"
-          },
-          {
-            "internalType": "address",
-            "name": "tokenB",
-            "type": "address"
-          }
-        ],
-        "name": "pairFor",
+        "inputs": [],
+        "name": "price",
         "outputs": [
           {
-            "internalType": "address",
-            "name": "lpt",
-            "type": "address"
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
           }
         ],
-        "stateMutability": "pure",
+        "stateMutability": "view",
         "type": "function",
         "constant": true
       },
@@ -2561,94 +2414,11 @@
         "inputs": [
           {
             "internalType": "uint256",
-            "name": "_period",
+            "name": "_price",
             "type": "uint256"
           }
         ],
-        "name": "setPeriod",
-        "outputs": [],
-        "stateMutability": "nonpayable",
-        "type": "function"
-      },
-      {
-        "inputs": [],
-        "name": "token0",
-        "outputs": [
-          {
-            "internalType": "address",
-            "name": "",
-            "type": "address"
-          }
-        ],
-        "stateMutability": "view",
-        "type": "function",
-        "constant": true
-      },
-      {
-        "inputs": [],
-        "name": "token1",
-        "outputs": [
-          {
-            "internalType": "address",
-            "name": "",
-            "type": "address"
-          }
-        ],
-        "stateMutability": "view",
-        "type": "function",
-        "constant": true
-      },
-      {
-        "inputs": [],
-        "name": "token2",
-        "outputs": [
-          {
-            "internalType": "address",
-            "name": "",
-            "type": "address"
-          }
-        ],
-        "stateMutability": "view",
-        "type": "function",
-        "constant": true
-      },
-      {
-        "inputs": [],
-        "name": "token3",
-        "outputs": [
-          {
-            "internalType": "address",
-            "name": "",
-            "type": "address"
-          }
-        ],
-        "stateMutability": "view",
-        "type": "function",
-        "constant": true
-      },
-      {
-        "inputs": [],
-        "name": "tokensCount",
-        "outputs": [
-          {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
-          }
-        ],
-        "stateMutability": "view",
-        "type": "function",
-        "constant": true
-      },
-      {
-        "inputs": [
-          {
-            "internalType": "address",
-            "name": "newOperator_",
-            "type": "address"
-          }
-        ],
-        "name": "transferOperator",
+        "name": "setPrice",
         "outputs": [],
         "stateMutability": "nonpayable",
         "type": "function"
@@ -2665,32 +2435,11 @@
         "outputs": [],
         "stateMutability": "nonpayable",
         "type": "function"
-      },
-      {
-        "inputs": [],
-        "name": "uniswapRouter",
-        "outputs": [
-          {
-            "internalType": "address",
-            "name": "",
-            "type": "address"
-          }
-        ],
-        "stateMutability": "view",
-        "type": "function",
-        "constant": true
-      },
-      {
-        "inputs": [],
-        "name": "update",
-        "outputs": [],
-        "stateMutability": "nonpayable",
-        "type": "function"
       }
     ]
   },
   "BondRedemtionOracle": {
-    "address": "0xfc209f104DB8e242446e7aFC83CFF8ED2Eeac140",
+    "address": "0x645B99A0067F3FcA97d8Ed4D2429c0F6f2e0F84a",
     "abi": [
       {
         "inputs": [
@@ -3168,7 +2917,7 @@
     ]
   },
   "ArthLiquidityBoardroom": {
-    "address": "0xcA39ea848259086d9E21c2Dba79F0637BAc36c82",
+    "address": "0x90a3533A7ca729A26D45c521c4F7f2FD4d566731",
     "abi": [
       {
         "inputs": [
@@ -3362,6 +3111,20 @@
             "internalType": "uint256",
             "name": "",
             "type": "uint256"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function",
+        "constant": true
+      },
+      {
+        "inputs": [],
+        "name": "cash",
+        "outputs": [
+          {
+            "internalType": "contract IERC20",
+            "name": "",
+            "type": "address"
           }
         ],
         "stateMutability": "view",
@@ -3660,7 +3423,7 @@
     ]
   },
   "MahaLiquidityBoardroom": {
-    "address": "0x7F4faCAE6eF82F020c6eAbbA508405f7f708226A",
+    "address": "0xFF56b8D6285F1A84fcfdBa1ac1181fdBEdB2efF0",
     "abi": [
       {
         "inputs": [
@@ -3854,6 +3617,20 @@
             "internalType": "uint256",
             "name": "",
             "type": "uint256"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function",
+        "constant": true
+      },
+      {
+        "inputs": [],
+        "name": "cash",
+        "outputs": [
+          {
+            "internalType": "contract IERC20",
+            "name": "",
+            "type": "address"
           }
         ],
         "stateMutability": "view",
@@ -4152,7 +3929,7 @@
     ]
   },
   "ArthBoardroom": {
-    "address": "0x85D9331AE1bf932d2B32EcBFaf2D04699dE9789C",
+    "address": "0x098AbaaDc0647C089085D71479F0C742bd2cE6F7",
     "abi": [
       {
         "inputs": [
@@ -4341,6 +4118,20 @@
             "internalType": "uint256",
             "name": "",
             "type": "uint256"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function",
+        "constant": true
+      },
+      {
+        "inputs": [],
+        "name": "cash",
+        "outputs": [
+          {
+            "internalType": "contract IERC20",
+            "name": "",
+            "type": "address"
           }
         ],
         "stateMutability": "view",
@@ -4639,7 +4430,7 @@
     ]
   },
   "DevelopmentFund": {
-    "address": "0x352709ad1C6EF093A2d89998c6eA4649B87a927d",
+    "address": "0x351AaF6156FDF6d58Db94271aC54549ccFf0Ee17",
     "abi": [
       {
         "anonymous": false,
@@ -4804,7 +4595,7 @@
     ]
   },
   "Treasury": {
-    "address": "0x166A9a20a7de72fC08fBd8B47085dB24AaD53190",
+    "address": "0x8DEbe9214F9EA7eDeD9803fC5D53a2bF3896E06a",
     "abi": [
       {
         "inputs": [
@@ -4845,6 +4636,11 @@
           },
           {
             "internalType": "address",
+            "name": "_gmuOracle",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
             "name": "_arthLiquidityBoardroom",
             "type": "address"
           },
@@ -4866,11 +4662,6 @@
           {
             "internalType": "address",
             "name": "_uniswapRouter",
-            "type": "address"
-          },
-          {
-            "internalType": "address",
-            "name": "_gmuOracle",
             "type": "address"
           },
           {
@@ -4901,12 +4692,6 @@
             "internalType": "uint256",
             "name": "newRate",
             "type": "uint256"
-          },
-          {
-            "indexed": false,
-            "internalType": "string",
-            "name": "label",
-            "type": "string"
           }
         ],
         "name": "BoardroomChanged",
@@ -5072,12 +4857,6 @@
             "internalType": "address",
             "name": "newOracle",
             "type": "address"
-          },
-          {
-            "indexed": false,
-            "internalType": "string",
-            "name": "label",
-            "type": "string"
           }
         ],
         "name": "OracleChanged",
@@ -5116,12 +4895,6 @@
             "internalType": "uint256",
             "name": "seigniorage",
             "type": "uint256"
-          },
-          {
-            "indexed": false,
-            "internalType": "string",
-            "name": "label",
-            "type": "string"
           }
         ],
         "name": "PoolFunded",
@@ -5890,6 +5663,19 @@
         "constant": true
       },
       {
+        "inputs": [
+          {
+            "internalType": "address",
+            "name": "target",
+            "type": "address"
+          }
+        ],
+        "name": "migrate",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      },
+      {
         "inputs": [],
         "name": "migrated",
         "outputs": [
@@ -6077,6 +5863,19 @@
       {
         "inputs": [
           {
+            "internalType": "bool",
+            "name": "val",
+            "type": "bool"
+          }
+        ],
+        "name": "setConsiderUniswapLiquidity",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
             "internalType": "address",
             "name": "newFund",
             "type": "address"
@@ -6119,6 +5918,32 @@
           }
         ],
         "name": "setMahaLiquidityBoardroom",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "uint256",
+            "name": "rate",
+            "type": "uint256"
+          }
+        ],
+        "name": "setMaxDebtIncreasePerEpoch",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "uint256",
+            "name": "rate",
+            "type": "uint256"
+          }
+        ],
+        "name": "setMaxSupplyIncreasePerEpoch",
         "outputs": [],
         "stateMutability": "nonpayable",
         "type": "function"
@@ -6259,19 +6084,6 @@
       {
         "inputs": [
           {
-            "internalType": "address",
-            "name": "target",
-            "type": "address"
-          }
-        ],
-        "name": "migrate",
-        "outputs": [],
-        "stateMutability": "nonpayable",
-        "type": "function"
-      },
-      {
-        "inputs": [
-          {
             "internalType": "uint256",
             "name": "amountInDai",
             "type": "uint256"
@@ -6321,7 +6133,7 @@
     ]
   },
   "ARTHBASPool": {
-    "address": "0x455C8da7B10Cef2a20ddBe1a82E46dDaE61E23A5",
+    "address": "0x5e265628B81dE0Ece46A1B22Ea20FC7B2323D589",
     "abi": [
       {
         "inputs": [
@@ -6967,7 +6779,7 @@
     ]
   },
   "MAHAARTHPool": {
-    "address": "0xDb80CEb4733330b90F453C70810E1C47D147F8C7",
+    "address": "0x60Fe1a11892Bb3d4B3797E3B6F6A84cD532EDd97",
     "abi": [
       {
         "inputs": [
@@ -7608,7 +7420,7 @@
     ]
   },
   "MAHADAIARTHLPTokenPool": {
-    "address": "0x0BfDa96F914a46b29d93774685528a943902CA82",
+    "address": "0x6F59087a985de1C5d55cbFBA27a315b28FD88e0e",
     "abi": [
       {
         "inputs": [
@@ -8249,7 +8061,7 @@
     ]
   },
   "MAHAMAHAETHLPTokenPool": {
-    "address": "0xaa3c647B8F681CFe34F5E2FC810EF94a3f9f349A",
+    "address": "0xb728d90916F8308f8670a85aDC31A2971Ce1e4dF",
     "abi": [
       {
         "inputs": [
