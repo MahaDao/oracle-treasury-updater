@@ -106,7 +106,7 @@ const init = async () => {
     // });
 
 
-    // cron.schedule('*/1 * * * *', async () => {
+    cron.schedule('*/30 * * * *', async () => {
         try {
             console.log('updating bond oracle', addresses.BondRedemtionOracle.address)
             const receipt1 = await BondRedemtionOracle.methods.update().send(await getSendParams())
@@ -114,17 +114,17 @@ const init = async () => {
         } catch (e) {
             console.log('BondRedemtionOracle tx filed; nvm', e)
         }
-    // });
+    });
 
-    // cron.schedule('*/6 * * * *', async () => {
-        // try {
-        //     console.log('updating ')
-        //     const receipt2 = await SeigniorageOracle.methods.update().send(await getSendParams())
-        //     console.log('SeigniorageOracle updated; tx hash', receipt2.transactionHash)
-        // } catch (e) {
-        //     console.log('SeigniorageOracle tx filed; nvm', e)
-        // }
-    // });
+    cron.schedule('0 * * * *', async () => {
+        try {
+            console.log('updating ')
+            const receipt2 = await SeigniorageOracle.methods.update().send(await getSendParams())
+            console.log('SeigniorageOracle updated; tx hash', receipt2.transactionHash)
+        } catch (e) {
+            console.log('SeigniorageOracle tx filed; nvm', e)
+        }
+    });
 }
 
 init();
