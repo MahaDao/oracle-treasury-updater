@@ -63,7 +63,7 @@ const init = async () => {
     );
 
 
-    const decimals = BigNumber.from(10).pow(18)
+    // const decimals = BigNumber.from(10).pow(18)
     // const price = BigNumber.from(199).mul(decimals).div(100)
     // console.log('setting price to', price)
     // const mahatx = await ArthMahaOracle.methods.setPrice(price.toString()).send(await getSendParams())
@@ -83,8 +83,8 @@ const init = async () => {
     //     console.log(error)
     // }
 
-    const receipt2 = await Treasury.methods.initialize().send(await getSendParams())
-    console.log('treasury tx init', receipt2.transactionHash)
+    // const receipt2 = await Treasury.methods.initialize().send(await getSendParams())
+    // console.log('treasury tx init', receipt2.transactionHash)
 
 
     // const receipt11 = await Treasury.methods.setArthLiquidityBoardroom('0xA0d61C2c2cBD80Af404adB0432533DC3BE6ED25C', 1).send(await getSendParams())
