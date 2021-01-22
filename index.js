@@ -31,7 +31,7 @@ const init = async () => {
     const getSendParams = async (nonceBump = 0) => {
         return {
             from,
-            nonce: await web3.eth.getTransactionCount(from) + nonceBump,
+            nonce:  await web3.eth.getTransactionCount(from) + nonceBump,
             gasPrice: await web3.eth.getGasPrice()
         }
     }
@@ -66,13 +66,18 @@ const init = async () => {
     const decimals = BigNumber.from(10).pow(18)
     // const price = BigNumber.from(199).mul(decimals).div(100)
     // console.log('setting price to', price)
-    // const mahatx = await MahaUSDOracle.methods.setPrice(price.toString()).send(await getSendParams())
+    // const mahatx = await ArthMahaOracle.methods.setPrice(price.toString()).send(await getSendParams())
     // console.log(mahatx)
 
-    // const gmu = BigNumber.from(299).mul(decimals).div(100)
-    // console.log('setting gmu price to', gmu)
-    // const gmuTx = await GMUOracle.methods.setPrice(gmu.toString()).send(await getSendParams())
-    // console.log(gmuTx)
+    // try {
+    //     const gmu = BigNumber.from(299).mul(decimals).div(100)
+    //     console.log('setting gmu price to', gmu)
+    //     const gmuTx = await GMUOracle.methods.setPrice(gmu.toString()).send(await getSendParams())
+    //     console.log(gmuTx)
+
+    // } catch (error) {
+    //     console.log(error)
+    // }
 
 
     cron.schedule('*/10 * * * *', async () => {
@@ -85,7 +90,7 @@ const init = async () => {
     });
 
 
-    cron.schedule('*/7 * * * *', async () => {
+    cron.schedule('*/4 * * * *', async () => {
         try {
             const receipt1 = await BondRedemtionOracle.methods.update().send(await getSendParams())
             console.log('BondRedemtionOracle updated; tx hash', receipt1.transactionHash)
