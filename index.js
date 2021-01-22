@@ -17,7 +17,7 @@ const addresses = require(`./addresses/${network}.json`)
 const TreasuryABI = require('./abi/Treasury.json');
 const BondRedemtionOracleABI = require('./abi/BondRedemtionOracle.json');
 const SeigniorageOracleABI = require('./abi/SeigniorageOracle.json');
-const MahaUSDOracleABI = require('./abi/MahaUSDOracle.json');
+const ArthMahaOracleABI = require('./abi/ArthMahaOracle.json');
 const GMUOracleABI = require('./abi/GMUOracle.json');
 
 
@@ -43,7 +43,7 @@ const init = async () => {
 
 
     const ArthMahaOracle = new web3.eth.Contract(
-        MahaUSDOracleABI.abi,
+        ArthMahaOracleABI.abi,
         addresses.ArthMahaOracle.address
     );
 
@@ -85,23 +85,23 @@ const init = async () => {
     });
 
 
-    // cron.schedule('*/7 * * * *', async () => {
+    cron.schedule('*/7 * * * *', async () => {
         try {
             const receipt1 = await BondRedemtionOracle.methods.update().send(await getSendParams())
             console.log('BondRedemtionOracle updated; tx hash', receipt1.transactionHash)
         } catch (e) {
             console.log('BondRedemtionOracle tx filed; nvm', e)
         }
-    // });
+    });
 
-    // cron.schedule('*/6 * * * *', async () => {
+    cron.schedule('*/6 * * * *', async () => {
         try {
             const receipt2 = await SeigniorageOracle.methods.update().send(await getSendParams())
             console.log('SeigniorageOracle updated; tx hash', receipt2.transactionHash)
         } catch (e) {
             console.log('SeigniorageOracle tx filed; nvm', e)
         }
-    // });
+    });
 }
 
 init();

@@ -2276,7 +2276,7 @@
       }
     ]
   },
-  "ArthMahaTestnetOracle": {
+  "ArthMahaOracle": {
     "address": "0x41d18D24Bef3fe210608AC0ED030D5951a3483a6",
     "abi": [
       {
