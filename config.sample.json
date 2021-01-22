@@ -1,6 +1,6 @@
 {
   "NETWORK": "ropsten",
   "FROM_ADDRESS": "",
-  "INFURA_KEY": "",
+  "WEB3_HTTP_URL": "",
   "PRIVATE_KEY": ""
 }

@@ -42,9 +42,9 @@ const init = async () => {
     );
 
 
-    const MahaUSDOracle = new web3.eth.Contract(
+    const ArthMahaOracle = new web3.eth.Contract(
         MahaUSDOracleABI.abi,
-        addresses.MAHAUSDOracle.address
+        addresses.ArthMahaOracle.address
     );
 
     const GMUOracle = new web3.eth.Contract(
@@ -85,23 +85,23 @@ const init = async () => {
     });
 
 
-    cron.schedule('*/7 * * * *', async () => {
+    // cron.schedule('*/7 * * * *', async () => {
         try {
             const receipt1 = await BondRedemtionOracle.methods.update().send(await getSendParams())
             console.log('BondRedemtionOracle updated; tx hash', receipt1.transactionHash)
         } catch (e) {
             console.log('BondRedemtionOracle tx filed; nvm', e)
         }
-    });
+    // });
 
-    cron.schedule('*/6 * * * *', async () => {
+    // cron.schedule('*/6 * * * *', async () => {
         try {
             const receipt2 = await SeigniorageOracle.methods.update().send(await getSendParams())
             console.log('SeigniorageOracle updated; tx hash', receipt2.transactionHash)
         } catch (e) {
             console.log('SeigniorageOracle tx filed; nvm', e)
         }
-    });
+    // });
 }
 
 init();
