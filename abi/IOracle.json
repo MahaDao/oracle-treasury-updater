@@ -3,29 +3,11 @@
   "abi": [
     {
       "inputs": [],
-      "name": "update",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "token",
-          "type": "address"
-        },
-        {
-          "internalType": "uint256",
-          "name": "amountIn",
-          "type": "uint256"
-        }
-      ],
-      "name": "consult",
+      "name": "getPrice",
       "outputs": [
         {
           "internalType": "uint256",
-          "name": "amountOut",
+          "name": "",
           "type": "uint256"
         }
       ],
@@ -33,35 +15,35 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.6.12+commit.27d51765\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"token\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amountIn\",\"type\":\"uint256\"}],\"name\":\"consult\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"amountOut\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"update\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/home/enamakel/Work/mahadao.com/arthcoin/smart-contracts/contracts/interfaces/IOracle.sol\":\"IOracle\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":1500},\"remappings\":[]},\"sources\":{\"/home/enamakel/Work/mahadao.com/arthcoin/smart-contracts/contracts/interfaces/IOracle.sol\":{\"keccak256\":\"0xe8e9ac68eb71fe2db1fd66bee17fd29246db7ac2b015b408c3db23d2614be3df\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://543e9ac0415e5f300de38e7b5be4ebb21628ad0d2fdc6a79744428f9d5bcbed5\",\"dweb:/ipfs/QmaB2iuhntpVRAJTnYyhKpBMV4urzPzz1bFc2NzNZmBP9P\"]}},\"version\":1}",
+  "metadata": "{\"compiler\":{\"version\":\"0.6.12+commit.27d51765\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"getPrice\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/Users/enamakel/Work/mahadao/arthcoin/arthcoin-v2/contracts/interfaces/IOracle.sol\":\"IOracle\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":1500},\"remappings\":[]},\"sources\":{\"/Users/enamakel/Work/mahadao/arthcoin/arthcoin-v2/contracts/interfaces/IOracle.sol\":{\"keccak256\":\"0xab5d35e2d64fbb467014e0b9c81193d8a79d35bb7d480d19c2ced6494d51fc75\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://5f1602d95b32f489bd94cca439969c74b4398087b616a341262eeb85abb3a673\",\"dweb:/ipfs/QmVwithe3TBiDFqcMfc3cyVjRNhPzQ42UtjhA98FxPygkP\"]}},\"version\":1}",
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "immutableReferences": {},
   "sourceMap": "",
   "deployedSourceMap": "",
-  "source": "// SPDX-License-Identifier: MIT\n\npragma solidity ^0.6.0;\n\ninterface IOracle {\n    function update() external;\n\n    function consult(address token, uint256 amountIn)\n        external\n        view\n        returns (uint256 amountOut);\n\n    // function getReserves()\n    //     external\n    //     view\n    //     returns (\n    //         uint112 reserve0,\n    //         uint112 reserve1,\n    //         uint32 blockTimestamp\n    //     );\n}\n",
-  "sourcePath": "/home/enamakel/Work/mahadao.com/arthcoin/smart-contracts/contracts/interfaces/IOracle.sol",
+  "source": "// SPDX-License-Identifier: MIT\n\npragma solidity ^0.6.12;\n\ninterface IOracle {\n    function getPrice() external view returns (uint256);\n}\n",
+  "sourcePath": "/Users/enamakel/Work/mahadao/arthcoin/arthcoin-v2/contracts/interfaces/IOracle.sol",
   "ast": {
-    "absolutePath": "/home/enamakel/Work/mahadao.com/arthcoin/smart-contracts/contracts/interfaces/IOracle.sol",
+    "absolutePath": "/Users/enamakel/Work/mahadao/arthcoin/arthcoin-v2/contracts/interfaces/IOracle.sol",
     "exportedSymbols": {
       "IOracle": [
-        5410
+        3923
       ]
     },
-    "id": 5411,
+    "id": 3924,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 5397,
+        "id": 3917,
         "literals": [
           "solidity",
           "^",
           "0.6",
-          ".0"
+          ".12"
         ],
         "nodeType": "PragmaDirective",
-        "src": "33:23:53"
+        "src": "33:24:40"
       },
       {
         "abstract": false,
@@ -70,9 +52,9 @@
         "contractKind": "interface",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 5410,
+        "id": 3923,
         "linearizedBaseContracts": [
-          5410
+          3923
         ],
         "name": "IOracle",
         "nodeType": "ContractDefinition",
@@ -80,85 +62,33 @@
           {
             "body": null,
             "documentation": null,
-            "functionSelector": "a2e62045",
-            "id": 5400,
+            "functionSelector": "98d5fdca",
+            "id": 3922,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
-            "name": "update",
+            "name": "getPrice",
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 5398,
+              "id": 3918,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "97:2:53"
+              "src": "100:2:40"
             },
             "returnParameters": {
-              "id": 5399,
-              "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "108:0:53"
-            },
-            "scope": 5410,
-            "src": "82:27:53",
-            "stateMutability": "nonpayable",
-            "virtual": false,
-            "visibility": "external"
-          },
-          {
-            "body": null,
-            "documentation": null,
-            "functionSelector": "3ddac953",
-            "id": 5409,
-            "implemented": false,
-            "kind": "function",
-            "modifiers": [],
-            "name": "consult",
-            "nodeType": "FunctionDefinition",
-            "overrides": null,
-            "parameters": {
-              "id": 5405,
+              "id": 3921,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 5402,
+                  "id": 3920,
                   "mutability": "mutable",
-                  "name": "token",
+                  "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 5409,
-                  "src": "132:13:53",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_address",
-                    "typeString": "address"
-                  },
-                  "typeName": {
-                    "id": 5401,
-                    "name": "address",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "132:7:53",
-                    "stateMutability": "nonpayable",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_address",
-                      "typeString": "address"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                },
-                {
-                  "constant": false,
-                  "id": 5404,
-                  "mutability": "mutable",
-                  "name": "amountIn",
-                  "nodeType": "VariableDeclaration",
-                  "overrides": null,
-                  "scope": 5409,
-                  "src": "147:16:53",
+                  "scope": 3922,
+                  "src": "126:7:40",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -166,10 +96,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 5403,
+                    "id": 3919,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "147:7:53",
+                    "src": "126:7:40",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -179,62 +109,27 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "131:33:53"
+              "src": "125:9:40"
             },
-            "returnParameters": {
-              "id": 5408,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 5407,
-                  "mutability": "mutable",
-                  "name": "amountOut",
-                  "nodeType": "VariableDeclaration",
-                  "overrides": null,
-                  "scope": 5409,
-                  "src": "212:17:53",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_uint256",
-                    "typeString": "uint256"
-                  },
-                  "typeName": {
-                    "id": 5406,
-                    "name": "uint256",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "212:7:53",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_uint256",
-                      "typeString": "uint256"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                }
-              ],
-              "src": "211:19:53"
-            },
-            "scope": 5410,
-            "src": "115:116:53",
+            "scope": 3923,
+            "src": "83:52:40",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 5411,
-        "src": "58:380:53"
+        "scope": 3924,
+        "src": "59:78:40"
       }
     ],
-    "src": "33:406:53"
+    "src": "33:105:40"
   },
   "legacyAST": {
     "attributes": {
-      "absolutePath": "/home/enamakel/Work/mahadao.com/arthcoin/smart-contracts/contracts/interfaces/IOracle.sol",
+      "absolutePath": "/Users/enamakel/Work/mahadao/arthcoin/arthcoin-v2/contracts/interfaces/IOracle.sol",
       "exportedSymbols": {
         "IOracle": [
-          5410
+          3923
         ]
       },
       "license": "MIT"
@@ -246,12 +141,12 @@
             "solidity",
             "^",
             "0.6",
-            ".0"
+            ".12"
           ]
         },
-        "id": 5397,
+        "id": 3917,
         "name": "PragmaDirective",
-        "src": "33:23:53"
+        "src": "33:24:40"
       },
       {
         "attributes": {
@@ -266,140 +161,41 @@
           "documentation": null,
           "fullyImplemented": false,
           "linearizedBaseContracts": [
-            5410
+            3923
           ],
           "name": "IOracle",
-          "scope": 5411
+          "scope": 3924
         },
         "children": [
           {
             "attributes": {
               "body": null,
               "documentation": null,
-              "functionSelector": "a2e62045",
+              "functionSelector": "98d5fdca",
               "implemented": false,
               "isConstructor": false,
               "kind": "function",
               "modifiers": [
                 null
               ],
-              "name": "update",
+              "name": "getPrice",
               "overrides": null,
-              "scope": 5410,
-              "stateMutability": "nonpayable",
-              "virtual": false,
-              "visibility": "external"
-            },
-            "children": [
-              {
-                "attributes": {
-                  "parameters": [
-                    null
-                  ]
-                },
-                "children": [],
-                "id": 5398,
-                "name": "ParameterList",
-                "src": "97:2:53"
-              },
-              {
-                "attributes": {
-                  "parameters": [
-                    null
-                  ]
-                },
-                "children": [],
-                "id": 5399,
-                "name": "ParameterList",
-                "src": "108:0:53"
-              }
-            ],
-            "id": 5400,
-            "name": "FunctionDefinition",
-            "src": "82:27:53"
-          },
-          {
-            "attributes": {
-              "body": null,
-              "documentation": null,
-              "functionSelector": "3ddac953",
-              "implemented": false,
-              "isConstructor": false,
-              "kind": "function",
-              "modifiers": [
-                null
-              ],
-              "name": "consult",
-              "overrides": null,
-              "scope": 5410,
+              "scope": 3923,
               "stateMutability": "view",
               "virtual": false,
               "visibility": "external"
             },
             "children": [
               {
-                "children": [
-                  {
-                    "attributes": {
-                      "constant": false,
-                      "mutability": "mutable",
-                      "name": "token",
-                      "overrides": null,
-                      "scope": 5409,
-                      "stateVariable": false,
-                      "storageLocation": "default",
-                      "type": "address",
-                      "value": null,
-                      "visibility": "internal"
-                    },
-                    "children": [
-                      {
-                        "attributes": {
-                          "name": "address",
-                          "stateMutability": "nonpayable",
-                          "type": "address"
-                        },
-                        "id": 5401,
-                        "name": "ElementaryTypeName",
-                        "src": "132:7:53"
-                      }
-                    ],
-                    "id": 5402,
-                    "name": "VariableDeclaration",
-                    "src": "132:13:53"
-                  },
-                  {
-                    "attributes": {
-                      "constant": false,
-                      "mutability": "mutable",
-                      "name": "amountIn",
-                      "overrides": null,
-                      "scope": 5409,
-                      "stateVariable": false,
-                      "storageLocation": "default",
-                      "type": "uint256",
-                      "value": null,
-                      "visibility": "internal"
-                    },
-                    "children": [
-                      {
-                        "attributes": {
-                          "name": "uint256",
-                          "type": "uint256"
-                        },
-                        "id": 5403,
-                        "name": "ElementaryTypeName",
-                        "src": "147:7:53"
-                      }
-                    ],
-                    "id": 5404,
-                    "name": "VariableDeclaration",
-                    "src": "147:16:53"
-                  }
-                ],
-                "id": 5405,
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 3918,
                 "name": "ParameterList",
-                "src": "131:33:53"
+                "src": "100:2:40"
               },
               {
                 "children": [
@@ -407,9 +203,9 @@
                     "attributes": {
                       "constant": false,
                       "mutability": "mutable",
-                      "name": "amountOut",
+                      "name": "",
                       "overrides": null,
-                      "scope": 5409,
+                      "scope": 3922,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -422,34 +218,34 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 5406,
+                        "id": 3919,
                         "name": "ElementaryTypeName",
-                        "src": "212:7:53"
+                        "src": "126:7:40"
                       }
                     ],
-                    "id": 5407,
+                    "id": 3920,
                     "name": "VariableDeclaration",
-                    "src": "212:17:53"
+                    "src": "126:7:40"
                   }
                 ],
-                "id": 5408,
+                "id": 3921,
                 "name": "ParameterList",
-                "src": "211:19:53"
+                "src": "125:9:40"
               }
             ],
-            "id": 5409,
+            "id": 3922,
             "name": "FunctionDefinition",
-            "src": "115:116:53"
+            "src": "83:52:40"
           }
         ],
-        "id": 5410,
+        "id": 3923,
         "name": "ContractDefinition",
-        "src": "58:380:53"
+        "src": "59:78:40"
       }
     ],
-    "id": 5411,
+    "id": 3924,
     "name": "SourceUnit",
-    "src": "33:406:53"
+    "src": "33:105:40"
   },
   "compiler": {
     "name": "solc",
@@ -457,7 +253,7 @@
   },
   "networks": {},
   "schemaVersion": "3.3.3",
-  "updatedAt": "2021-01-06T08:57:37.797Z",
+  "updatedAt": "2021-01-22T05:52:18.931Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},
