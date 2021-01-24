@@ -96,14 +96,14 @@ const init = async () => {
     // const receipt3 = await Treasury.methods.allocateSeigniorage().send(await getSendParams())
     // console.log('treasury tx updated', receipt3.transactionHash)
 
-    // cron.schedule('*/10 * * * *', async () => {
-    //     try {
-    //         const receipt = await Treasury.methods.allocateSeigniorage().send(await getSendParams())
-    //         console.log('treasury tx updated', receipt.transactionHash)
-    //     } catch (e) {
-    //         console.log('treasury tx filed; nvm', e)
-    //     }
-    // });
+    cron.schedule('*/5 * * * *', async () => {
+        try {
+            const receipt = await Treasury.methods.allocateSeigniorage().send(await getSendParams())
+            console.log('treasury tx updated', receipt.transactionHash)
+        } catch (e) {
+            console.log('treasury tx filed; nvm', e)
+        }
+    });
 
 
     cron.schedule('*/30 * * * *', async () => {
