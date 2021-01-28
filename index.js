@@ -74,10 +74,10 @@ const init = async () => {
     //     // const init = await Treasury.methods.initialize()
     //     // console.log(init.transactionHash)
 
-        // const gmu = BigNumber.from(90).mul(decimals).div(100)
-        // console.log('setting gmu price to', gmu)
-        // const gmuTx = await GMUOracle.methods.setPrice(gmu.toString()).send(await getSendParams())
-        // console.log(gmuTx.transactionHash)
+    // const gmu = BigNumber.from(90).mul(decimals).div(100)
+    // console.log('setting gmu price to', gmu)
+    // const gmuTx = await GMUOracle.methods.setPrice(gmu.toString()).send(await getSendParams())
+    // console.log(gmuTx.transactionHash)
 
     // } catch (error) {
     //     console.log(error)
@@ -106,7 +106,7 @@ const init = async () => {
     });
 
 
-    cron.schedule('*/30 * * * *', async () => {
+    cron.schedule('*/10 * * * *', async () => {
         try {
             console.log('updating bond oracle', addresses.BondRedemtionOracle.address)
             const receipt1 = await BondRedemtionOracle.methods.update().send(await getSendParams())
@@ -116,7 +116,7 @@ const init = async () => {
         }
     });
 
-    cron.schedule('0 * * * *', async () => {
+    cron.schedule('*/15 * * * *', async () => {
         try {
             console.log('updating ')
             const receipt2 = await SeigniorageOracle.methods.update().send(await getSendParams())
