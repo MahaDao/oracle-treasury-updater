@@ -4639,85 +4639,26 @@
     ]
   },
   "Treasury": {
-    "address": "0xF2fd4F08dE4bEc75c5A23bD36FBeef54A3FF182A",
+    "address": "0x52dEBEebABD82f6D201b5B5549BDdF62843dCb01",
     "abi": [
       {
         "inputs": [
-          {
-            "internalType": "address",
-            "name": "_dai",
-            "type": "address"
-          },
-          {
-            "internalType": "address",
-            "name": "_cash",
-            "type": "address"
-          },
-          {
-            "internalType": "address",
-            "name": "_bond",
-            "type": "address"
-          },
-          {
-            "internalType": "address",
-            "name": "_share",
-            "type": "address"
-          },
-          {
-            "internalType": "address",
-            "name": "_bondOracle",
-            "type": "address"
-          },
-          {
-            "internalType": "address",
-            "name": "_arthMahaOracle",
-            "type": "address"
-          },
-          {
-            "internalType": "address",
-            "name": "_seigniorageOracle",
-            "type": "address"
-          },
-          {
-            "internalType": "address",
-            "name": "_gmuOracle",
-            "type": "address"
-          },
-          {
-            "internalType": "address",
-            "name": "_arthLiquidityBoardroom",
-            "type": "address"
-          },
-          {
-            "internalType": "address",
-            "name": "_mahaLiquidityBoardroom",
-            "type": "address"
-          },
-          {
-            "internalType": "address",
-            "name": "_arthBoardroom",
-            "type": "address"
-          },
-          {
-            "internalType": "address",
-            "name": "_fund",
-            "type": "address"
-          },
-          {
-            "internalType": "address",
-            "name": "_uniswapRouter",
-            "type": "address"
-          },
-          {
-            "internalType": "uint256",
-            "name": "_startTime",
-            "type": "uint256"
-          },
-          {
-            "internalType": "uint256",
-            "name": "_period",
-            "type": "uint256"
-          }
+          { "internalType": "address", "name": "_dai", "type": "address" },
+          { "internalType": "address", "name": "_cash", "type": "address" },
+          { "internalType": "address", "name": "_bond", "type": "address" },
+          { "internalType": "address", "name": "_share", "type": "address" },
+          { "internalType": "address", "name": "_bondOracle", "type": "address" },
+          { "internalType": "address", "name": "_arthMahaOracle", "type": "address" },
+          { "internalType": "address", "name": "_seigniorageOracle", "type": "address" },
+          { "internalType": "address", "name": "_gmuOracle", "type": "address" },
+          { "internalType": "address", "name": "_arthLiquidityBoardroom", "type": "address" },
+          { "internalType": "address", "name": "_mahaLiquidityBoardroom", "type": "address" },
+          { "internalType": "address", "name": "_arthBoardroom", "type": "address" },
+          { "internalType": "address", "name": "_fund", "type": "address" },
+          { "internalType": "address", "name": "_uniswapRouter", "type": "address" },
+          { "internalType": "uint256", "name": "_startTime", "type": "uint256" },
+          { "internalType": "uint256", "name": "_period", "type": "uint256" },
+          { "internalType": "uint256", "name": "_startEpoch", "type": "uint256" }
         ],
         "stateMutability": "nonpayable",
         "type": "constructor"
@@ -4725,18 +4666,8 @@
       {
         "anonymous": false,
         "inputs": [
-          {
-            "indexed": false,
-            "internalType": "address",
-            "name": "newFund",
-            "type": "address"
-          },
-          {
-            "indexed": false,
-            "internalType": "uint256",
-            "name": "newRate",
-            "type": "uint256"
-          }
+          { "indexed": false, "internalType": "address", "name": "newFund", "type": "address" },
+          { "indexed": false, "internalType": "uint256", "name": "newRate", "type": "uint256" }
         ],
         "name": "BoardroomChanged",
         "type": "event"
@@ -4744,12 +4675,7 @@
       {
         "anonymous": false,
         "inputs": [
-          {
-            "indexed": false,
-            "internalType": "uint256",
-            "name": "newRate",
-            "type": "uint256"
-          }
+          { "indexed": false, "internalType": "uint256", "name": "newRate", "type": "uint256" }
         ],
         "name": "BondSeigniorageRateChanged",
         "type": "event"
@@ -4757,12 +4683,7 @@
       {
         "anonymous": false,
         "inputs": [
-          {
-            "indexed": false,
-            "internalType": "uint256",
-            "name": "limit",
-            "type": "uint256"
-          }
+          { "indexed": false, "internalType": "uint256", "name": "limit", "type": "uint256" }
         ],
         "name": "BondsAllocated",
         "type": "event"
@@ -4770,12 +4691,7 @@
       {
         "anonymous": false,
         "inputs": [
-          {
-            "indexed": true,
-            "internalType": "address",
-            "name": "from",
-            "type": "address"
-          },
+          { "indexed": true, "internalType": "address", "name": "from", "type": "address" },
           {
             "indexed": false,
             "internalType": "uint256",
@@ -4801,18 +4717,8 @@
       {
         "anonymous": false,
         "inputs": [
-          {
-            "indexed": false,
-            "internalType": "address",
-            "name": "newFund",
-            "type": "address"
-          },
-          {
-            "indexed": false,
-            "internalType": "uint256",
-            "name": "newRate",
-            "type": "uint256"
-          }
+          { "indexed": false, "internalType": "address", "name": "newFund", "type": "address" },
+          { "indexed": false, "internalType": "uint256", "name": "newRate", "type": "uint256" }
         ],
         "name": "EcosystemFundChanged",
         "type": "event"
@@ -4820,18 +4726,8 @@
       {
         "anonymous": false,
         "inputs": [
-          {
-            "indexed": true,
-            "internalType": "address",
-            "name": "executor",
-            "type": "address"
-          },
-          {
-            "indexed": false,
-            "internalType": "uint256",
-            "name": "at",
-            "type": "uint256"
-          }
+          { "indexed": true, "internalType": "address", "name": "executor", "type": "address" },
+          { "indexed": false, "internalType": "uint256", "name": "at", "type": "uint256" }
         ],
         "name": "Initialized",
         "type": "event"
@@ -4839,12 +4735,7 @@
       {
         "anonymous": false,
         "inputs": [
-          {
-            "indexed": false,
-            "internalType": "uint256",
-            "name": "data",
-            "type": "uint256"
-          }
+          { "indexed": false, "internalType": "uint256", "name": "data", "type": "uint256" }
         ],
         "name": "Log",
         "type": "event"
@@ -4852,12 +4743,7 @@
       {
         "anonymous": false,
         "inputs": [
-          {
-            "indexed": true,
-            "internalType": "address",
-            "name": "target",
-            "type": "address"
-          }
+          { "indexed": true, "internalType": "address", "name": "target", "type": "address" }
         ],
         "name": "Migration",
         "type": "event"
@@ -4884,12 +4770,7 @@
       {
         "anonymous": false,
         "inputs": [
-          {
-            "indexed": true,
-            "internalType": "address",
-            "name": "operator",
-            "type": "address"
-          },
+          { "indexed": true, "internalType": "address", "name": "operator", "type": "address" },
           {
             "indexed": false,
             "internalType": "address",
@@ -4915,12 +4796,7 @@
             "name": "previousOwner",
             "type": "address"
           },
-          {
-            "indexed": true,
-            "internalType": "address",
-            "name": "newOwner",
-            "type": "address"
-          }
+          { "indexed": true, "internalType": "address", "name": "newOwner", "type": "address" }
         ],
         "name": "OwnershipTransferred",
         "type": "event"
@@ -4928,12 +4804,7 @@
       {
         "anonymous": false,
         "inputs": [
-          {
-            "indexed": true,
-            "internalType": "address",
-            "name": "pool",
-            "type": "address"
-          },
+          { "indexed": true, "internalType": "address", "name": "pool", "type": "address" },
           {
             "indexed": false,
             "internalType": "uint256",
@@ -4947,24 +4818,9 @@
       {
         "anonymous": false,
         "inputs": [
-          {
-            "indexed": true,
-            "internalType": "address",
-            "name": "from",
-            "type": "address"
-          },
-          {
-            "indexed": false,
-            "internalType": "uint256",
-            "name": "amount",
-            "type": "uint256"
-          },
-          {
-            "indexed": false,
-            "internalType": "bool",
-            "name": "sellForDai",
-            "type": "bool"
-          }
+          { "indexed": true, "internalType": "address", "name": "from", "type": "address" },
+          { "indexed": false, "internalType": "uint256", "name": "amount", "type": "uint256" },
+          { "indexed": false, "internalType": "bool", "name": "sellForDai", "type": "bool" }
         ],
         "name": "RedeemedBonds",
         "type": "event"
@@ -4985,18 +4841,8 @@
       {
         "anonymous": false,
         "inputs": [
-          {
-            "indexed": false,
-            "internalType": "uint256",
-            "name": "old",
-            "type": "uint256"
-          },
-          {
-            "indexed": false,
-            "internalType": "uint256",
-            "name": "newRate",
-            "type": "uint256"
-          }
+          { "indexed": false, "internalType": "uint256", "name": "old", "type": "uint256" },
+          { "indexed": false, "internalType": "uint256", "name": "newRate", "type": "uint256" }
         ],
         "name": "StabilityFeeChanged",
         "type": "event"
@@ -5004,12 +4850,7 @@
       {
         "anonymous": false,
         "inputs": [
-          {
-            "indexed": true,
-            "internalType": "address",
-            "name": "from",
-            "type": "address"
-          },
+          { "indexed": true, "internalType": "address", "name": "from", "type": "address" },
           {
             "indexed": false,
             "internalType": "uint256",
@@ -5042,678 +4883,365 @@
       {
         "inputs": [],
         "name": "accumulatedBonds",
-        "outputs": [
-          {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
-          }
-        ],
+        "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
         "stateMutability": "view",
-        "type": "function",
-        "constant": true
+        "type": "function"
       },
       {
         "inputs": [],
         "name": "accumulatedSeigniorage",
-        "outputs": [
-          {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
-          }
-        ],
+        "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
         "stateMutability": "view",
-        "type": "function",
-        "constant": true
+        "type": "function"
+      },
+      {
+        "inputs": [],
+        "name": "allocateSeigniorage",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
       },
       {
         "inputs": [],
         "name": "arthBoardroom",
-        "outputs": [
-          {
-            "internalType": "address",
-            "name": "",
-            "type": "address"
-          }
-        ],
+        "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
         "stateMutability": "view",
-        "type": "function",
-        "constant": true
+        "type": "function"
       },
       {
         "inputs": [],
         "name": "arthBoardroomAllocationRate",
-        "outputs": [
-          {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
-          }
-        ],
+        "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
         "stateMutability": "view",
-        "type": "function",
-        "constant": true
+        "type": "function"
       },
       {
         "inputs": [],
         "name": "arthCirculatingSupply",
-        "outputs": [
-          {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
-          }
-        ],
+        "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
         "stateMutability": "view",
-        "type": "function",
-        "constant": true
+        "type": "function"
       },
       {
         "inputs": [],
         "name": "arthLiquidityBoardroom",
-        "outputs": [
-          {
-            "internalType": "address",
-            "name": "",
-            "type": "address"
-          }
-        ],
+        "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
         "stateMutability": "view",
-        "type": "function",
-        "constant": true
+        "type": "function"
       },
       {
         "inputs": [],
         "name": "arthLiquidityBoardroomAllocationRate",
-        "outputs": [
-          {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
-          }
-        ],
+        "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
         "stateMutability": "view",
-        "type": "function",
-        "constant": true
+        "type": "function"
       },
       {
         "inputs": [],
         "name": "arthMahaOracle",
-        "outputs": [
-          {
-            "internalType": "address",
-            "name": "",
-            "type": "address"
-          }
-        ],
+        "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
         "stateMutability": "view",
-        "type": "function",
-        "constant": true
+        "type": "function"
       },
       {
         "inputs": [],
         "name": "bond",
-        "outputs": [
-          {
-            "internalType": "address",
-            "name": "",
-            "type": "address"
-          }
-        ],
+        "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
         "stateMutability": "view",
-        "type": "function",
-        "constant": true
+        "type": "function"
+      },
+      {
+        "inputs": [],
+        "name": "bondCirculatingSupply",
+        "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+        "stateMutability": "view",
+        "type": "function"
       },
       {
         "inputs": [],
         "name": "bondDiscount",
-        "outputs": [
-          {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
-          }
-        ],
+        "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
         "stateMutability": "view",
-        "type": "function",
-        "constant": true
+        "type": "function"
       },
       {
         "inputs": [],
         "name": "bondOracle",
-        "outputs": [
-          {
-            "internalType": "address",
-            "name": "",
-            "type": "address"
-          }
-        ],
+        "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
         "stateMutability": "view",
-        "type": "function",
-        "constant": true
+        "type": "function"
       },
       {
         "inputs": [],
         "name": "bondSeigniorageRate",
-        "outputs": [
-          {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
-          }
-        ],
+        "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
         "stateMutability": "view",
-        "type": "function",
-        "constant": true
+        "type": "function"
+      },
+      {
+        "inputs": [
+          { "internalType": "uint256", "name": "amountInDai", "type": "uint256" },
+          { "internalType": "uint256", "name": "targetPrice", "type": "uint256" }
+        ],
+        "name": "buyBonds",
+        "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+        "stateMutability": "nonpayable",
+        "type": "function"
       },
       {
         "inputs": [],
         "name": "callable",
-        "outputs": [
-          {
-            "internalType": "bool",
-            "name": "",
-            "type": "bool"
-          }
-        ],
+        "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
         "stateMutability": "view",
-        "type": "function",
-        "constant": true
+        "type": "function"
       },
       {
         "inputs": [],
         "name": "cash",
-        "outputs": [
-          {
-            "internalType": "address",
-            "name": "",
-            "type": "address"
-          }
-        ],
+        "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
         "stateMutability": "view",
-        "type": "function",
-        "constant": true
+        "type": "function"
       },
       {
         "inputs": [],
         "name": "cashTargetPrice",
-        "outputs": [
-          {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
-          }
-        ],
+        "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
         "stateMutability": "view",
-        "type": "function",
-        "constant": true
+        "type": "function"
       },
       {
         "inputs": [],
         "name": "cashToBondConversionLimit",
-        "outputs": [
-          {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
-          }
-        ],
+        "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
         "stateMutability": "view",
-        "type": "function",
-        "constant": true
+        "type": "function"
       },
       {
         "inputs": [],
         "name": "considerUniswapLiquidity",
-        "outputs": [
-          {
-            "internalType": "bool",
-            "name": "",
-            "type": "bool"
-          }
-        ],
+        "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
         "stateMutability": "view",
-        "type": "function",
-        "constant": true
+        "type": "function"
       },
       {
         "inputs": [],
         "name": "dai",
-        "outputs": [
-          {
-            "internalType": "address",
-            "name": "",
-            "type": "address"
-          }
-        ],
+        "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
         "stateMutability": "view",
-        "type": "function",
-        "constant": true
+        "type": "function"
       },
       {
         "inputs": [],
         "name": "ecosystemFund",
-        "outputs": [
-          {
-            "internalType": "address",
-            "name": "",
-            "type": "address"
-          }
-        ],
+        "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
         "stateMutability": "view",
-        "type": "function",
-        "constant": true
+        "type": "function"
       },
       {
         "inputs": [],
         "name": "ecosystemFundAllocationRate",
-        "outputs": [
-          {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
-          }
-        ],
+        "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
         "stateMutability": "view",
-        "type": "function",
-        "constant": true
+        "type": "function"
       },
       {
-        "inputs": [
-          {
-            "internalType": "uint256",
-            "name": "price",
-            "type": "uint256"
-          }
-        ],
-        "name": "estimatePercentageOfBondsToIssue",
-        "outputs": [
-          {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
-          }
-        ],
+        "inputs": [{ "internalType": "uint256", "name": "price", "type": "uint256" }],
+        "name": "estimateBondsToIssue",
+        "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
         "stateMutability": "view",
-        "type": "function",
-        "constant": true
+        "type": "function"
       },
       {
-        "inputs": [
-          {
-            "internalType": "uint256",
-            "name": "price",
-            "type": "uint256"
-          }
-        ],
+        "inputs": [{ "internalType": "uint256", "name": "price", "type": "uint256" }],
         "name": "estimateSeignorageToMint",
-        "outputs": [
-          {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
-          }
-        ],
+        "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
         "stateMutability": "view",
-        "type": "function",
-        "constant": true
+        "type": "function"
       },
       {
         "inputs": [],
         "name": "get1hourEpoch",
-        "outputs": [
-          {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
-          }
-        ],
+        "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
         "stateMutability": "view",
-        "type": "function",
-        "constant": true
+        "type": "function"
       },
       {
         "inputs": [],
         "name": "getArthMahaOraclePrice",
-        "outputs": [
-          {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
-          }
-        ],
+        "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
         "stateMutability": "view",
-        "type": "function",
-        "constant": true
+        "type": "function"
       },
       {
         "inputs": [],
         "name": "getBondOraclePrice",
-        "outputs": [
-          {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
-          }
-        ],
+        "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
         "stateMutability": "view",
-        "type": "function",
-        "constant": true
+        "type": "function"
       },
       {
         "inputs": [],
         "name": "getBondPurchasePrice",
-        "outputs": [
-          {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
-          }
-        ],
+        "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
         "stateMutability": "view",
-        "type": "function",
-        "constant": true
+        "type": "function"
       },
       {
         "inputs": [],
         "name": "getBondRedemtionPrice",
-        "outputs": [
-          {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
-          }
-        ],
+        "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
         "stateMutability": "view",
-        "type": "function",
-        "constant": true
+        "type": "function"
       },
       {
         "inputs": [],
         "name": "getCashSupplyInLiquidity",
-        "outputs": [
-          {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
-          }
-        ],
+        "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
         "stateMutability": "view",
-        "type": "function",
-        "constant": true
+        "type": "function"
       },
       {
         "inputs": [],
         "name": "getCurrentEpoch",
-        "outputs": [
-          {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
-          }
-        ],
+        "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
         "stateMutability": "view",
-        "type": "function",
-        "constant": true
+        "type": "function"
       },
       {
         "inputs": [],
         "name": "getExpansionLimitPrice",
-        "outputs": [
-          {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
-          }
-        ],
+        "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
         "stateMutability": "view",
-        "type": "function",
-        "constant": true
+        "type": "function"
       },
       {
         "inputs": [],
         "name": "getGMUOraclePrice",
-        "outputs": [
-          {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
-          }
-        ],
+        "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
         "stateMutability": "view",
-        "type": "function",
-        "constant": true
+        "type": "function"
       },
       {
         "inputs": [],
         "name": "getLastEpoch",
-        "outputs": [
-          {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
-          }
-        ],
+        "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
         "stateMutability": "view",
-        "type": "function",
-        "constant": true
+        "type": "function"
       },
       {
         "inputs": [],
         "name": "getNextEpoch",
-        "outputs": [
-          {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
-          }
-        ],
+        "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
         "stateMutability": "view",
-        "type": "function",
-        "constant": true
+        "type": "function"
       },
       {
-        "inputs": [
-          {
-            "internalType": "uint256",
-            "name": "price",
-            "type": "uint256"
-          },
-          {
-            "internalType": "uint256",
-            "name": "targetPrice",
-            "type": "uint256"
-          }
-        ],
+        "inputs": [{ "internalType": "uint256", "name": "price", "type": "uint256" }],
         "name": "getPercentDeviationFromTarget",
-        "outputs": [
-          {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
-          }
-        ],
-        "stateMutability": "pure",
-        "type": "function",
-        "constant": true
+        "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+        "stateMutability": "view",
+        "type": "function"
       },
       {
         "inputs": [],
         "name": "getPeriod",
-        "outputs": [
-          {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
-          }
-        ],
+        "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
         "stateMutability": "view",
-        "type": "function",
-        "constant": true
+        "type": "function"
       },
       {
         "inputs": [],
         "name": "getReserve",
-        "outputs": [
-          {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
-          }
-        ],
+        "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
         "stateMutability": "view",
-        "type": "function",
-        "constant": true
+        "type": "function"
       },
       {
         "inputs": [],
         "name": "getSeigniorageOraclePrice",
-        "outputs": [
-          {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
-          }
-        ],
+        "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
         "stateMutability": "view",
-        "type": "function",
-        "constant": true
+        "type": "function"
       },
       {
         "inputs": [],
         "name": "getStabilityFee",
-        "outputs": [
-          {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
-          }
-        ],
+        "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
         "stateMutability": "view",
-        "type": "function",
-        "constant": true
+        "type": "function"
       },
       {
         "inputs": [],
         "name": "getStartTime",
-        "outputs": [
-          {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
-          }
-        ],
+        "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
         "stateMutability": "view",
-        "type": "function",
-        "constant": true
+        "type": "function"
       },
       {
         "inputs": [],
         "name": "gmuOracle",
-        "outputs": [
-          {
-            "internalType": "address",
-            "name": "",
-            "type": "address"
-          }
-        ],
+        "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
         "stateMutability": "view",
-        "type": "function",
-        "constant": true
+        "type": "function"
+      },
+      {
+        "inputs": [],
+        "name": "initialize",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
       },
       {
         "inputs": [],
         "name": "initialized",
-        "outputs": [
-          {
-            "internalType": "bool",
-            "name": "",
-            "type": "bool"
-          }
-        ],
+        "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
         "stateMutability": "view",
-        "type": "function",
-        "constant": true
+        "type": "function"
       },
       {
         "inputs": [],
         "name": "isOperator",
-        "outputs": [
-          {
-            "internalType": "bool",
-            "name": "",
-            "type": "bool"
-          }
-        ],
+        "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
         "stateMutability": "view",
-        "type": "function",
-        "constant": true
+        "type": "function"
+      },
+      {
+        "inputs": [],
+        "name": "lastExecutedAt",
+        "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+        "stateMutability": "view",
+        "type": "function"
       },
       {
         "inputs": [],
         "name": "mahaLiquidityBoardroom",
-        "outputs": [
-          {
-            "internalType": "address",
-            "name": "",
-            "type": "address"
-          }
-        ],
+        "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
         "stateMutability": "view",
-        "type": "function",
-        "constant": true
+        "type": "function"
       },
       {
         "inputs": [],
         "name": "mahaLiquidityBoardroomAllocationRate",
-        "outputs": [
-          {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
-          }
-        ],
+        "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
         "stateMutability": "view",
-        "type": "function",
-        "constant": true
+        "type": "function"
       },
       {
         "inputs": [],
         "name": "maxDebtIncreasePerEpoch",
-        "outputs": [
-          {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
-          }
-        ],
+        "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
         "stateMutability": "view",
-        "type": "function",
-        "constant": true
+        "type": "function"
       },
       {
         "inputs": [],
         "name": "maxSupplyIncreasePerEpoch",
-        "outputs": [
-          {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
-          }
-        ],
+        "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
         "stateMutability": "view",
-        "type": "function",
-        "constant": true
+        "type": "function"
       },
       {
-        "inputs": [
-          {
-            "internalType": "address",
-            "name": "target",
-            "type": "address"
-          }
-        ],
+        "inputs": [{ "internalType": "address", "name": "target", "type": "address" }],
         "name": "migrate",
         "outputs": [],
         "stateMutability": "nonpayable",
@@ -5722,58 +5250,47 @@
       {
         "inputs": [],
         "name": "migrated",
-        "outputs": [
-          {
-            "internalType": "bool",
-            "name": "",
-            "type": "bool"
-          }
-        ],
+        "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
         "stateMutability": "view",
-        "type": "function",
-        "constant": true
+        "type": "function"
       },
       {
         "inputs": [],
         "name": "nextEpochPoint",
-        "outputs": [
-          {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
-          }
-        ],
+        "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
         "stateMutability": "view",
-        "type": "function",
-        "constant": true
+        "type": "function"
       },
       {
         "inputs": [],
         "name": "operator",
-        "outputs": [
-          {
-            "internalType": "address",
-            "name": "",
-            "type": "address"
-          }
-        ],
+        "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
         "stateMutability": "view",
-        "type": "function",
-        "constant": true
+        "type": "function"
       },
       {
         "inputs": [],
         "name": "owner",
-        "outputs": [
-          {
-            "internalType": "address",
-            "name": "",
-            "type": "address"
-          }
-        ],
+        "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
         "stateMutability": "view",
-        "type": "function",
-        "constant": true
+        "type": "function"
+      },
+      {
+        "inputs": [],
+        "name": "period",
+        "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          { "internalType": "uint256", "name": "amount", "type": "uint256" },
+          { "internalType": "bool", "name": "sellForDai", "type": "bool" }
+        ],
+        "name": "redeemBonds",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
       },
       {
         "inputs": [],
@@ -5785,43 +5302,21 @@
       {
         "inputs": [],
         "name": "safetyRegion",
-        "outputs": [
-          {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
-          }
-        ],
+        "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
         "stateMutability": "view",
-        "type": "function",
-        "constant": true
+        "type": "function"
       },
       {
         "inputs": [],
         "name": "seigniorageOracle",
-        "outputs": [
-          {
-            "internalType": "address",
-            "name": "",
-            "type": "address"
-          }
-        ],
+        "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
         "stateMutability": "view",
-        "type": "function",
-        "constant": true
+        "type": "function"
       },
       {
         "inputs": [
-          {
-            "internalType": "address",
-            "name": "newFund",
-            "type": "address"
-          },
-          {
-            "internalType": "uint256",
-            "name": "rate",
-            "type": "uint256"
-          }
+          { "internalType": "address", "name": "newFund", "type": "address" },
+          { "internalType": "uint256", "name": "rate", "type": "uint256" }
         ],
         "name": "setArthBoardroom",
         "outputs": [],
@@ -5830,16 +5325,8 @@
       },
       {
         "inputs": [
-          {
-            "internalType": "address",
-            "name": "newFund",
-            "type": "address"
-          },
-          {
-            "internalType": "uint256",
-            "name": "rate",
-            "type": "uint256"
-          }
+          { "internalType": "address", "name": "newFund", "type": "address" },
+          { "internalType": "uint256", "name": "rate", "type": "uint256" }
         ],
         "name": "setArthLiquidityBoardroom",
         "outputs": [],
@@ -5847,71 +5334,35 @@
         "type": "function"
       },
       {
-        "inputs": [
-          {
-            "internalType": "address",
-            "name": "newOracle",
-            "type": "address"
-          }
-        ],
+        "inputs": [{ "internalType": "address", "name": "newOracle", "type": "address" }],
         "name": "setArthMahaOracle",
         "outputs": [],
         "stateMutability": "nonpayable",
         "type": "function"
       },
       {
-        "inputs": [
-          {
-            "internalType": "uint256",
-            "name": "rate",
-            "type": "uint256"
-          }
-        ],
+        "inputs": [{ "internalType": "uint256", "name": "rate", "type": "uint256" }],
         "name": "setBondDiscount",
-        "outputs": [
-          {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
-          }
-        ],
+        "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
         "stateMutability": "nonpayable",
         "type": "function"
       },
       {
-        "inputs": [
-          {
-            "internalType": "address",
-            "name": "newOracle",
-            "type": "address"
-          }
-        ],
+        "inputs": [{ "internalType": "address", "name": "newOracle", "type": "address" }],
         "name": "setBondOracle",
         "outputs": [],
         "stateMutability": "nonpayable",
         "type": "function"
       },
       {
-        "inputs": [
-          {
-            "internalType": "uint256",
-            "name": "rate",
-            "type": "uint256"
-          }
-        ],
+        "inputs": [{ "internalType": "uint256", "name": "rate", "type": "uint256" }],
         "name": "setBondSeigniorageRate",
         "outputs": [],
         "stateMutability": "nonpayable",
         "type": "function"
       },
       {
-        "inputs": [
-          {
-            "internalType": "bool",
-            "name": "val",
-            "type": "bool"
-          }
-        ],
+        "inputs": [{ "internalType": "bool", "name": "val", "type": "bool" }],
         "name": "setConsiderUniswapLiquidity",
         "outputs": [],
         "stateMutability": "nonpayable",
@@ -5919,16 +5370,8 @@
       },
       {
         "inputs": [
-          {
-            "internalType": "address",
-            "name": "newFund",
-            "type": "address"
-          },
-          {
-            "internalType": "uint256",
-            "name": "rate",
-            "type": "uint256"
-          }
+          { "internalType": "address", "name": "newFund", "type": "address" },
+          { "internalType": "uint256", "name": "rate", "type": "uint256" }
         ],
         "name": "setFund",
         "outputs": [],
@@ -5936,13 +5379,7 @@
         "type": "function"
       },
       {
-        "inputs": [
-          {
-            "internalType": "address",
-            "name": "newOracle",
-            "type": "address"
-          }
-        ],
+        "inputs": [{ "internalType": "address", "name": "newOracle", "type": "address" }],
         "name": "setGMUOracle",
         "outputs": [],
         "stateMutability": "nonpayable",
@@ -5950,16 +5387,8 @@
       },
       {
         "inputs": [
-          {
-            "internalType": "address",
-            "name": "newFund",
-            "type": "address"
-          },
-          {
-            "internalType": "uint256",
-            "name": "rate",
-            "type": "uint256"
-          }
+          { "internalType": "address", "name": "newFund", "type": "address" },
+          { "internalType": "uint256", "name": "rate", "type": "uint256" }
         ],
         "name": "setMahaLiquidityBoardroom",
         "outputs": [],
@@ -5967,84 +5396,42 @@
         "type": "function"
       },
       {
-        "inputs": [
-          {
-            "internalType": "uint256",
-            "name": "rate",
-            "type": "uint256"
-          }
-        ],
+        "inputs": [{ "internalType": "uint256", "name": "rate", "type": "uint256" }],
         "name": "setMaxDebtIncreasePerEpoch",
         "outputs": [],
         "stateMutability": "nonpayable",
         "type": "function"
       },
       {
-        "inputs": [
-          {
-            "internalType": "uint256",
-            "name": "rate",
-            "type": "uint256"
-          }
-        ],
+        "inputs": [{ "internalType": "uint256", "name": "rate", "type": "uint256" }],
         "name": "setMaxSupplyIncreasePerEpoch",
         "outputs": [],
         "stateMutability": "nonpayable",
         "type": "function"
       },
       {
-        "inputs": [
-          {
-            "internalType": "uint256",
-            "name": "_period",
-            "type": "uint256"
-          }
-        ],
+        "inputs": [{ "internalType": "uint256", "name": "_period", "type": "uint256" }],
         "name": "setPeriod",
         "outputs": [],
         "stateMutability": "nonpayable",
         "type": "function"
       },
       {
-        "inputs": [
-          {
-            "internalType": "uint256",
-            "name": "rate",
-            "type": "uint256"
-          }
-        ],
+        "inputs": [{ "internalType": "uint256", "name": "rate", "type": "uint256" }],
         "name": "setSafetyRegion",
-        "outputs": [
-          {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
-          }
-        ],
+        "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
         "stateMutability": "nonpayable",
         "type": "function"
       },
       {
-        "inputs": [
-          {
-            "internalType": "address",
-            "name": "newOracle",
-            "type": "address"
-          }
-        ],
+        "inputs": [{ "internalType": "address", "name": "newOracle", "type": "address" }],
         "name": "setSeigniorageOracle",
         "outputs": [],
         "stateMutability": "nonpayable",
         "type": "function"
       },
       {
-        "inputs": [
-          {
-            "internalType": "uint256",
-            "name": "_stabilityFee",
-            "type": "uint256"
-          }
-        ],
+        "inputs": [{ "internalType": "uint256", "name": "_stabilityFee", "type": "uint256" }],
         "name": "setStabilityFee",
         "outputs": [],
         "stateMutability": "nonpayable",
@@ -6053,52 +5440,33 @@
       {
         "inputs": [],
         "name": "share",
-        "outputs": [
-          {
-            "internalType": "address",
-            "name": "",
-            "type": "address"
-          }
-        ],
+        "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
         "stateMutability": "view",
-        "type": "function",
-        "constant": true
+        "type": "function"
       },
       {
         "inputs": [],
         "name": "stabilityFee",
-        "outputs": [
-          {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
-          }
-        ],
+        "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
         "stateMutability": "view",
-        "type": "function",
-        "constant": true
+        "type": "function"
       },
       {
-        "inputs": [
-          {
-            "internalType": "address",
-            "name": "newOperator_",
-            "type": "address"
-          }
-        ],
+        "inputs": [],
+        "name": "startTime",
+        "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [{ "internalType": "address", "name": "newOperator_", "type": "address" }],
         "name": "transferOperator",
         "outputs": [],
         "stateMutability": "nonpayable",
         "type": "function"
       },
       {
-        "inputs": [
-          {
-            "internalType": "address",
-            "name": "newOwner",
-            "type": "address"
-          }
-        ],
+        "inputs": [{ "internalType": "address", "name": "newOwner", "type": "address" }],
         "name": "transferOwnership",
         "outputs": [],
         "stateMutability": "nonpayable",
@@ -6107,71 +5475,8 @@
       {
         "inputs": [],
         "name": "uniswapRouter",
-        "outputs": [
-          {
-            "internalType": "address",
-            "name": "",
-            "type": "address"
-          }
-        ],
+        "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
         "stateMutability": "view",
-        "type": "function",
-        "constant": true
-      },
-      {
-        "inputs": [],
-        "name": "initialize",
-        "outputs": [],
-        "stateMutability": "nonpayable",
-        "type": "function"
-      },
-      {
-        "inputs": [
-          {
-            "internalType": "uint256",
-            "name": "amountInDai",
-            "type": "uint256"
-          },
-          {
-            "internalType": "uint256",
-            "name": "targetPrice",
-            "type": "uint256"
-          }
-        ],
-        "name": "buyBonds",
-        "outputs": [
-          {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
-          }
-        ],
-        "stateMutability": "nonpayable",
-        "type": "function"
-      },
-      {
-        "inputs": [
-          {
-            "internalType": "uint256",
-            "name": "amount",
-            "type": "uint256"
-          },
-          {
-            "internalType": "bool",
-            "name": "sellForDai",
-            "type": "bool"
-          }
-        ],
-        "name": "redeemBonds",
-        "outputs": [],
-        "stateMutability": "nonpayable",
-        "type": "function"
-      },
-      {
-        "inputs": [],
-        "name": "allocateSeigniorage",
-        "outputs": [],
-        "stateMutability": "nonpayable",
         "type": "function"
       }
     ]
