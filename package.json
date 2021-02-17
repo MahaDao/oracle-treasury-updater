@@ -10,9 +10,11 @@
   "license": "ISC",
   "dependencies": {
     "@truffle/hdwallet-provider": "^1.2.1",
-    "ethers": "^5.0.25",
+    "ethers": "^5.0.31",
     "nconf": "^0.11.0",
     "node-cron": "^2.0.3",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.6",
     "web3": "^1.3.1"
   }
 }
