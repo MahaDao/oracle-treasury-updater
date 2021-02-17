@@ -1,8 +1,10 @@
 const nconf = require('nconf')
 const cron = require('node-cron')
 const Web3 = require('web3');
+const rp = require('request-promise');
 const Provider = require('@truffle/hdwallet-provider');
-const { BigNumber } = require('ethers')
+const ethers = require('ethers')
+
 
 nconf.argv().env()
 nconf.file('config.json');
@@ -33,6 +35,19 @@ const init = async () => {
             from,
             nonce: await web3.eth.getTransactionCount(from) + nonceBump,
             gasPrice: await web3.eth.getGasPrice()
+        }
+    }
+
+    const getPriceFromGecko = async (coinId = 'mahadao', currency = 'usd') => {
+        try {
+            console.log('Fetching price from coin gecko for id', coinId);
+            const priceInJsonString = await rp(`https://api.coingecko.com/api/v3/simple/price?ids=${coinId}&vs_currencies=usd,eth`);
+
+            if (!priceInJsonString.includes(coinId)) return null;
+
+            return JSON.parse(priceInJsonString)[coinId][currency];
+        } catch (e) {
+            return null;
         }
     }
 
@@ -96,6 +111,27 @@ const init = async () => {
     // const receipt3 = await Treasury.methods.allocateSeigniorage().send(await getSendParams())
     // console.log('treasury tx updated', receipt3.transactionHash)
 
+    // Run script for ARTHMAHAOracle every hour.
+    cron.schedule('* */1 * * *', async () => {
+        const mahaPrice = await getPriceFromGecko('mahadao', 'usd');
+        const arthPrice = await getPriceFromGecko('arth', 'usd');
+
+        // Lets say price of 1 ARTH is 1$ and price of 1 MAHA is 10$.
+        // Then ARTH/MAHA = 1/10 = 0.1
+        // Then 1 ARTH = 0.1 * 1 MAHA
+        if (mahaPrice !== null || arthPrice !== null) {
+            console.log('ARTH is at', arthPrice);
+            console.log('MAHA is at', mahaPrice);
+
+            // In Javascript Numbers.
+            const arthToMaha = arthPrice / mahaPrice;
+            const arthToMahaInBigNumber = ethers.utils.parseEther(`${arthToMaha}`);
+
+            // await ArthMahaOracle.methods.setPrice(arthToMahaInBigNumber.toString()).send(await getSendParams())
+            console.log(arthToMahaInBigNumber.toString());
+        }
+    });
+
     cron.schedule('*/5 * * * *', async () => {
         try {
             const receipt = await Treasury.methods.allocateSeigniorage().send(await getSendParams())
@@ -126,5 +162,6 @@ const init = async () => {
         }
     });
 }
+
 
 init();
